@@ -4,7 +4,7 @@ import { RouteFactory } from "../../Factory/RouteFactory";
 const routeFactory: RouteFactory = Container.get(RouteFactory);
 export const languageRoute = [
   routeFactory.createGetRoute(
-    "/api/language/liste",
+    "/api/language/liste/:quantity?",
     "liste",
     LanguageController
   ),
