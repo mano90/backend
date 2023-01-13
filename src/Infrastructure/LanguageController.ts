@@ -10,7 +10,7 @@ export class LanguageController {
       let quantity: number = 10;
       let key = req.params.quantity;
       if (key) {
-        quantity = Number(key);
+       if (!isNaN(+key) && +key >= 0) quantity = Number(key);
       }
       const liste: any[] = await googleService.executeQuery(
         "SELECT arr.name AS LANGUAGE, sum(arr.bytes) AS total_bytes FROM `bigquery-public-data.github_repos.languages`, UNNEST(LANGUAGE) arr GROUP BY LANGUAGE ORDER BY total_bytes DESC LIMIT " +
