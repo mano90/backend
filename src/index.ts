@@ -1,3 +1,5 @@
+import "reflect-metadata";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 import { Request, Response } from "express";
